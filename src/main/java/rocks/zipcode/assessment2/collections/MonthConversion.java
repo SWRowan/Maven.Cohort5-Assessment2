@@ -1,15 +1,19 @@
 package rocks.zipcode.assessment2.collections;
 
+import java.util.Map;
+import java.util.TreeMap;
+
 /**
  * Use a map to solve
  */
 public class MonthConversion {
+   public Map<Integer, String> calender = new TreeMap<>();
     /**
      * @param monthNumber - ordinal of month in the year; i.e. January = 1, February = 2
      * @param monthName - name of month
      */
     public void add(Integer monthNumber, String monthName) {
-
+        calender.put(monthNumber, monthName);
     }
 
     /**
@@ -17,7 +21,8 @@ public class MonthConversion {
      * @return the name of the respective month
      */
     public String getName(Integer monthNumber) {
-        throw new NullPointerException();
+        //throw new NullPointerException();
+        return calender.get(monthNumber);
     }
 
     /**
@@ -25,6 +30,7 @@ public class MonthConversion {
      * @return - the ordinal of the month in the year
      */
     public int getNumber(String monthName) {
+
         return (Integer)null;
     }
 
@@ -48,7 +54,7 @@ public class MonthConversion {
      * @return number of entries in this mapping
      */
     public Integer size() {
-        return -1;
+        return calender.size();
     }
 
     /**
