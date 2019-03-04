@@ -53,6 +53,24 @@ public class Person {
 
     @Override
     public boolean equals(Object o) {
-        return (Boolean)null;
+        if(o == this){
+            return true;
+        }
+        if(!(o instanceof Person)){
+            return false;
+        }
+//        System.out.println(((Person) o).getId());
+//        System.out.println(id);
+        return (((Person) o).getId().equals(id) && ((Person) o).getName().equals(name) && ((Person) o).getAddress().equals(address));
+    }
+
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("Person{id="+id+", ");
+        sb.append("name='"+name+"', ");
+        sb.append("address="+address.toString()+"}");
+
+        return sb.toString();
     }
 }

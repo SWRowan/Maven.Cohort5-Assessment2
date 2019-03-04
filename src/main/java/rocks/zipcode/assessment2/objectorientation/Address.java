@@ -87,7 +87,9 @@ public class Address {
         if(!(o instanceof Address)){
             return false;
         }
-        return false;
+        return (((Address) o).addressLine1.equals(addressLine1)&&((Address) o).getAddressLine2().equals(addressLine2)&&
+                ((Address) o).getCity().equals(city) && ((Address) o).getState().equals(state)&&
+                ((Address) o).getZipcode().equals(zipcode));
     }
 
     @Override

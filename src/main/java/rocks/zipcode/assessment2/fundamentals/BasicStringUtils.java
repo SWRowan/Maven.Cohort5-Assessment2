@@ -40,10 +40,6 @@ public class BasicStringUtils {
      */
     public static String removeCharacters(String string, String charactersToRemove) {
         String replacedStr = string.replace(charactersToRemove, "");
-//        for (int i = 0; i < ; i++) {
-//
-//        }
-
         return replacedStr;
     }
 
@@ -53,6 +49,9 @@ public class BasicStringUtils {
      * @return reverse of `string` with `charactersToRemove` removed
      */
     public static String removeCharactersThenReverse(String string, String charactersToRemove) {
-        return null;
+        String reverse = BasicStringUtils.reverse(string);
+        String reverseCharsToRemove = BasicStringUtils.reverse(charactersToRemove);
+        String answer = BasicStringUtils.removeCharacters(reverse, reverseCharsToRemove);
+        return answer;
     }
 }
