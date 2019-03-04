@@ -29,9 +29,14 @@ public class MonthConversion {
      * @param monthName - name of month
      * @return - the ordinal of the month in the year
      */
-    public int getNumber(String monthName) {
+    public Integer getNumber(String monthName) {
 
-        return (Integer)null;
+        for(Map.Entry s : calender.entrySet()){
+            if (s.getValue() == monthName) {
+                return (Integer)s.getKey();
+            }
+        }
+        return null;
     }
 
     /**
@@ -39,7 +44,12 @@ public class MonthConversion {
      * @return true if the monthNumber is in the keySet
      */
     public Boolean isValidNumber(Integer monthNumber) {
-        return null;
+        for(Map.Entry s : calender.entrySet()){
+            if (s.getKey() == monthNumber) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
@@ -47,7 +57,12 @@ public class MonthConversion {
      * @return true if the monthName is in the valueSet
      */
     public Boolean isValidMonth(String monthName) {
-        return null;
+        for(Map.Entry s : calender.entrySet()){
+            if (s.getValue() == monthName) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
@@ -62,6 +77,6 @@ public class MonthConversion {
      * @param monthName - name of month
      */
     public void update(Integer monthNumber, String monthName) {
-
+        calender.replace(monthNumber, monthName);
     }
 }
